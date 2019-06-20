@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
     });
 });
 
-app.listen(3001, function() {
+app.listen(process.env.PORT, function() {
   console.log('Running on localhost:3001');
 });
 
