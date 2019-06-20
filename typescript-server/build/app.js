@@ -1,14 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
+const cors = require("cors");
 var unirest = require("unirest");
-var https = require("https");
 var key = require("./key")
 
-app.locals = [1, 2, 3];
+app.use(cors());
+app.use(express.json());
 
-console.log(key)
+app.set("port", process.env.PORT || 3001);
 
 app.get("/", (req, res) => {
   unirest
@@ -16,13 +17,14 @@ app.get("/", (req, res) => {
     .header("X-RapidAPI-Host", "wordsapiv1.p.rapidapi.com")
     .header(
       "X-RapidAPI-Key",
-      key
+      process.env.APP_APIKEY
     )
     .end(response => {
-      res.status(200).send(response.body);
+      res.status(200).send(response);
     });
 });
 
 app.listen(3001, function() {
-  console.log(key);
+  console.log('Running on localhost:3001');
 });
+
