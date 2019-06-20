@@ -4,7 +4,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 var unirest = require("unirest");
-var key = require("./key")
 
 app.use(cors());
 app.use(express.json());
@@ -24,7 +23,7 @@ app.get("/", (req, res) => {
     });
 });
 
-app.listen(3001, function() {
+app.listen(process.env.PORT, function() {
   console.log('Running on localhost:3001');
 });
 
