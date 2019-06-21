@@ -7,6 +7,8 @@ Backend deployed to Heroku [here](https://node-practice-be.herokuapp.com/ "Here"
 
 Frontend deployed to Heroku [here](https://typescript-ex.herokuapp.com/ "Here")
 
+Frontend repo on Github [here](https://github.com/TomWilhoit/Typescript-ex "Here") 
+
 Critiques welcome!
 
 Example of "Get" from Heroku URL:
